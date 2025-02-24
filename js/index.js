@@ -1,97 +1,99 @@
+let address = {
+    'building no': 3960,
+    street: 'North 1st street',
+    state: 'CA',
+    country: 'USA'
+};
+
+console.log( address)
+console.log("country="+address.country)
+
+
 let person = {
     firstName: 'John',
     lastName: 'Doe'
 };
 
-  
-delete person.firstName
+person.firstName = 'Jane';
+
+console.log(person);
 
 
-console.log(person)
+// for ( ; ; ) {
+//     console.log ("hellooooooooo world ")
+//     break;
+//     // statements
+//  }
 
 
-
-let employee = {
-    firstName: 'Peter',
-    lastName: 'Doe',
-    employeeId: 1
-};
-
-console.log('ssn' in employee);
-console.log('employeeId' in employee);
-
-
-// add the ssn property
-person.ssn = '123-45-6789';
-
-// change the name
-person.name = 'John Doe';
-
-console.log(person)
-
-let scores = new Array();
-
-scores=["hello",1,true,"hi",1.002];
-
-
-console.log(scores)
-
-let mountains = ['Everest', 'Fuji', 'Nanga Parbat'];
-mountains[2] = 50.0009;
-
-let l=mountains.length;
-console.log("lengty:"+l);
-
-console.log(mountains)
-
-
-for (let i = 0; i < l; i++) {
-    
-
-
-    if(i==1){
-        mountains[i]="ashish";
-        
+for (let j = 1; ; j += 2) {
+    console.log(j);
+    if (j > 10) {
+      break;
     }
-    console.log(mountains[i]);
   }
 
 
-
-//   le result = (10, 10 + 20,8000);
-// console.log("comma operator"+result);
-let result=new Array()
+  function say(message) {
 
 
-let len= result.length;
-for (let index = 0; index < len; index++) {
-    result[i] = (10, 10 + 20,8000);
-    console.log(result[i]);
-   
-    
+    message=message+ "hiii senorita"
+    console.log(message);
+  }
+
+let message="hello you  "
+  say(message);
+
+
+
+
+
+  function addnum(a, b) {
+    return a + b;
 }
 
-// for (let index = 0; index < len; index++) {
-//     // result[i] = (10, 10 + 20,8000);
-//     const element =result[index];
-//     console.log(element)
-    
-// }
+
+let sum = addnum(10000, 20000);
+console.log('Sum:', sum);
 
 
 
-// result.forEach(i => {
-//     console.log("element in comma operator=" + i);
-// });
 
 
 
-function say(message) {
-    let a=10,b=40;
 
-    console.log(message);
-    return a + b;
+
+
+function addmultiargs() {
+    let summu = 0;
+    for (let i = 0; i < arguments.length; i++) {
+      summu += arguments[i];
+    }
+    return summu;
   }
+
+
   
-  let resultuuu = say('Hello');
-  console.log('Result:', resultuuu);
+  console.log(addnum(1, 2)); // 3
+  console.log(addmultiargs(1, 2, 3, 4, 5,77,99,40)); // 15
+
+  function compareBy(propertyName) {
+    return function (a, b) {
+      let x = a[propertyName], y = b[propertyName];
+      return x > y ? 1 : (x < y ? -1 : 0); // Compares properties
+    };
+}
+
+let products = [
+    { name: 'iPhone', price: 900 },
+    { name: 'Samsung Galaxy', price: 850 },
+    { name: 'Sony Xperia', price: 700 },
+];
+
+console.log('Products sorted by name:');
+products.sort(compareBy('name')); // Sorts by 'name'
+console.table(products);
+
+console.log('Products sorted by price:');
+products.sort(compareBy('price')); // Sorts by 'price'
+console.table(products);
